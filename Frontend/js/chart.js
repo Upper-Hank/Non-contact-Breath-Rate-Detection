@@ -58,58 +58,28 @@ class TemperatureChart {
         this.container.appendChild(this.svg);
     }
 
-    // 创建渐变定义
+    // 创建渐变定义（已改为纯色）
     createGradients() {
-        const svgNS = 'http://www.w3.org/2000/svg';
-
-        // 环境温度渐变（流星尾迹效果）
-        const ambientGradient = document.createElementNS(svgNS, 'linearGradient');
-        ambientGradient.setAttribute('id', 'ambientGradient');
-        ambientGradient.setAttribute('x1', '0%');
-        ambientGradient.setAttribute('y1', '0%');
-        ambientGradient.setAttribute('x2', '100%');
-        ambientGradient.setAttribute('y2', '0%');
-        ambientGradient.innerHTML = `
-            <stop offset="0%" stop-color="#999" stop-opacity="0" />
-            <stop offset="70%" stop-color="#999" stop-opacity="0.3" />
-            <stop offset="90%" stop-color="#999" stop-opacity="0.8" />
-            <stop offset="100%" stop-color="#999" stop-opacity="1" />
-        `;
-
-        // 物体温度渐变（流星尾迹效果）
-        const objectGradient = document.createElementNS(svgNS, 'linearGradient');
-        objectGradient.setAttribute('id', 'objectGradient');
-        objectGradient.setAttribute('x1', '0%');
-        objectGradient.setAttribute('y1', '0%');
-        objectGradient.setAttribute('x2', '100%');
-        objectGradient.setAttribute('y2', '0%');
-        objectGradient.innerHTML = `
-            <stop offset="0%" stop-color="#ff8c00" stop-opacity="0" />
-            <stop offset="70%" stop-color="#ff8c00" stop-opacity="0.3" />
-            <stop offset="90%" stop-color="#ff8c00" stop-opacity="0.8" />
-            <stop offset="100%" stop-color="#ff8c00" stop-opacity="1" />
-        `;
-
-        this.defs.appendChild(ambientGradient);
-        this.defs.appendChild(objectGradient);
+        // 不再需要创建渐变，改为使用纯色
+        // 此方法保留以维持代码结构的完整性
     }
 
     // 创建路径元素
     createPaths() {
         const svgNS = 'http://www.w3.org/2000/svg';
 
-        // 环境温度路径
+        // 环境温度路径（纯色）
         this.ambientPath = document.createElementNS(svgNS, 'path');
-        this.ambientPath.setAttribute('stroke', 'url(#ambientGradient)');
+        this.ambientPath.setAttribute('stroke', '#999');
         this.ambientPath.setAttribute('stroke-width', '2');
         this.ambientPath.setAttribute('fill', 'none');
         this.ambientPath.setAttribute('stroke-linecap', 'round');
         this.ambientPath.setAttribute('stroke-linejoin', 'round');
         this.ambientPath.setAttribute('mask', 'url(#fadeMask)');
 
-        // 物体温度路径
+        // 物体温度路径（纯色）
         this.objectPath = document.createElementNS(svgNS, 'path');
-        this.objectPath.setAttribute('stroke', 'url(#objectGradient)');
+        this.objectPath.setAttribute('stroke', '#ff8c00');
         this.objectPath.setAttribute('stroke-width', '2');
         this.objectPath.setAttribute('fill', 'none');
         this.objectPath.setAttribute('stroke-linecap', 'round');
