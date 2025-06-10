@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>远程呼吸频率检测</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+</head>
+
+<body>
+    <button id="langToggle" class="lang-toggle">EN</button>
+    <div class="container">
+        <header>
+            <h1>远程呼吸频率检测</h1>
+            <div href="#" id="connectDevice" class="connect-link">
+                <span class="link-text">连接设备</span>
+            </div>
+        </header>
+        <main>
+            <div class="chart-container">
+            </div>
+
+            <div class="data-outputs">
+                <div class="output-item">
+                    <div class="h2-wrapper">
+                        <h2>呼吸频率</h2>
+                    </div>
+                    <div class="value-container">
+                        <span class="value" id="breathRate">--</span>
+                        <span class="unit" id="breathRateUnit">次/分钟</span>
+                    </div>
+                </div>
+                <div class="output-item">
+                    <div class="h2-wrapper">
+                        <h2>室温</h2>
+                    </div>
+                    <div class="value-container">
+                        <span class="value" id="roomTemp">--</span>
+                        <span class="unit" id="roomTempUnit">°C</span>
+                    </div>
+                </div>
+                <div class="output-item">
+                    <div class="h2-wrapper">
+                        <h2>采集频率</h2>
+                    </div>
+                    <div class="value-container">
+                        <span class="value" id="samplingRate">--</span>
+                        <span class="unit" id="samplingRateUnit">次/分钟</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/chart.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
